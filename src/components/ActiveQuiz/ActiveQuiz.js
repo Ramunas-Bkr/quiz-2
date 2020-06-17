@@ -8,14 +8,14 @@ const ActiveQuiz = (props) => {
             <p className={classes.Question}>
                 <span>
                     <strong>2.</strong>&nbsp;
-                    Kaip laikais?
+                    {props.question}
                 </span>
                 <small>4 klausimas iš 12</small>
             </p>
 
             <AnswersList 
                 answers={props.answers}
-
+                onAnswerClick={props.onAnswerClick}
             />
         </div>
     )

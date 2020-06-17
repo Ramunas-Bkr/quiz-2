@@ -7,14 +7,20 @@ class Quiz extends Component {
     state = {
         quiz: [
             {
+                question: 'Kokia diena po pirmadienio?',
+                rightAnswerId: 1,
                 answers: [
-                    {text: 'Klausimas 1'},
-                    {text: 'Klausimas 2'},
-                    {text: 'Klausimas 3'},
-                    {text: 'Klausimas 4'}
+                    {text: 'Antradienis', id: 1},
+                    { text: 'Pirmanaktis', id: 2},
+                    { text: 'Sekmadienis', id: 3},
+                    { text: 'Kažkoksdienis', id: 4}
                 ]
             }
         ]
+    }
+
+    onAnswerClickHandler = (answerId) => {
+        console.log('Answer Id: ', answerId);
     }
 
     render() {
@@ -24,6 +30,8 @@ class Quiz extends Component {
                     <h1>Atsakykite į klausimus</h1>
                     <ActiveQuiz 
                         answers={this.state.quiz[0].answers}
+                        question={this.state.quiz[0].question}
+                        onAnswerClick={this.onAnswerClickHandler}
                     />
                 </div>
             </div>
