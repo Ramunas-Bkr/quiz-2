@@ -10,7 +10,7 @@ const ActiveQuiz = (props) => {
                     <strong>2.</strong>&nbsp;
                     {props.question}
                 </span>
-                <small>4 klausimas iš 12</small>
+                <small>{props.answerNumber} klausimas iš {props.quizLength}</small>
             </p>
 
             <AnswersList 
